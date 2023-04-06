@@ -44,48 +44,8 @@ th {
   position: relative;
 }
 
-th span {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-th span:hover {
-  color: #007bff;
-}
-
-th span::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 6px 6px 6px;
-  border-color: transparent transparent #555 transparent;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-th span::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 6px 0 6px;
-  border-color: #555 transparent transparent transparent;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-th:hover span::before,
-th:hover span::after {
-  border-color: #007bff transparent transparent transparent;
+th span{
+  padding-left: 10px;
 }
 
 tbody tr:nth-child(even) {
@@ -101,7 +61,7 @@ tbody tr:nth-child(even) {
 button {
   margin: 0 5px;
   border: none;
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   font-size: 1.2rem;
   padding: 10px;
@@ -111,10 +71,10 @@ button {
 }
 
 button:hover {
-  background-color: #0062cc;
+  background-color: grey;
 }
 
 button.active {
-  background-color: #005cbf;
+  background-color: grey;
   cursor: default;
 }

@@ -66,11 +66,14 @@ const App = () => {
       <table>
         <thead>
           <tr>
-            <th onClick={handleSortDirectionChange}>
-              Name {sortDirection === 'ASC' ?  ( <span>&#x25bc; </span> ) : (
-              <span style={{ marginLeft: '10px' }}>&#x25BC;</span>
-              )}
-            </th>
+          <th onClick={handleSortDirectionChange}>Name{' '}
+            {sortDirection === 'ASC' ? (
+            <span>&#x25bc;</span> ) : (
+            <span>&#x25BC;</span> )}{' '}
+            {sortDirection === 'DESC' ? ( 
+            <span>&#x25b2;</span> ) : (
+            <span>&#x25B2;</span> )}
+          </th>
             <th>Address</th>
             <th>Phone</th>
             <th>Company</th>
