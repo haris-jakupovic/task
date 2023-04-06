@@ -62,11 +62,14 @@ const App = () => {
       <h1>Users</h1>
       <label htmlFor="search">Search by city:</label>
       <input id="search" type="text" value={searchTerm} onChange={handleSearchTermChange} />
+      <div className="total-records">Total records : {totalUsers}</div>
       <table>
         <thead>
           <tr>
             <th onClick={handleSortDirectionChange}>
-              Name {sortDirection === 'ASC' ? <span>&#x25B2;</span> : <span>&#x25BC;</span>}
+              Name {sortDirection === 'ASC' ?  ( <span>&#x25bc; </span> ) : (
+              <span style={{ marginLeft: '10px' }}>&#x25BC;</span>
+              )}
             </th>
             <th>Address</th>
             <th>Phone</th>
