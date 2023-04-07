@@ -1,37 +1,38 @@
-Ovo je React funkcionalna komponenta koja prikazuje popis korisnika i omogućuje pretraživanje korisnika po gradu i sortiranje po imenu. 
+This is a React functional component that displays a list of users and enables searching for users by city and sorting by name. It also allows displaying a specific number of users per page and navigating between pages.
 
-Također, omogućuje prikazivanje samo određenog broja korisnika po stranici i navigaciju između stranica.
+First, React, useState and useEffect hooks are imported from React, as well as the axios library for making HTTP requests. A CSS file is also imported.
 
-Prvo, importujemo React, useState i useEffect hookove iz Reacta i axios biblioteku za obavljanje HTTP zahtjeva. Također, importujemo CSS datoteku.
+Then, the user type is defined using an interface which has an ID, name, address, phone, and company name.
 
-Zatim definišemo tip korisnika pomoću interface-a koje ima id, ime, adresu, telefon i naziv tvrtke.
+After that, the App function component is defined which uses several useState hooks to store state.
 
-Nakon toga definišemo funkciju komponentu App koja koristi nekoliko useState hookova za pohranjivanje stanja. 
+The first useState hook stores the list of users, the second hook stores the search term for searching users.
 
-Prvi useState hook pohranjuje popis korisnika, drugi hook pohranjuje termin za pretraživanje korisnika. 
+The third hook stores the current page that the user is viewing, and the fourth hook stores the sorting direction. (ASC DESC)
 
-Treći hook pohranjuje trenutnu stranicu koju korisnik pregledava, a četvrti hook pohranjuje smjer sortiranja. (ASC DESC)
+Then, the useEffect hook is used, which is called only once during the initial rendering of the component.
 
-Zatim koristimo useEffect hook koji se poziva samo jednom prilikom prvog renderiranja komponente. 
+This hook is used to retrieve the list of users using an HTTP GET request to the web API path 'https://jsonplaceholder.typicode.com/users'.
 
-Ovaj hook se koristi za dohvatanje popisa korisnika pomoću HTTP GET zahtjeva na web API putanju 'https://jsonplaceholder.typicode.com/users'. 
+The results are stored in the user state. After that, several helper functions are defined.
 
-Rezultati se pohranjuju u stanje korisnika. Nakon toga definišemo nekoliko pomoćnih funkcija. 
+handleSearchTermChange handles changes in the user search and sets the current page to the first page.
 
-handleSearchTermChange obrađuje promjene u pretraživanju korisnika i postavlja trenutnu stranicu na prvu. 
+handleSortDirectionChange reverses the sorting direction.
 
-handleSortDirectionChange preokreće smjer sortiranja. 
+sortedUsers and filteredUsers sort and filter users alphabetically and by city search using Array.sort() and Array.filter().
 
-sortedUsers i filteredUsers pomoću Array.sort() i Array.filter() sortiraju i filtriraju korisnike prema abecedi i pretraživanju grada. 
+Finally, handlePageChange updates the current page when the user clicks the navigation button.
 
-Konačno, handlePageChange ažurira trenutnu stranicu kada korisnik klikne dugme za navigaciju.
+At the end of the App function, JSX is rendered which displays a search field, a table with the list of users, a navigation button and uses the stored values from the useState hooks and helper functions for dynamic data display.
 
-Na kraju funkcije App renderira JSX koji prikazuje polje za pretraživanje, tablicu s popisom korisnika, dugme za navigaciju i koristi pohranjene vrijednosti iz useState hookova i pomoćnih funkcija za dinamičko prikazivanje podataka. 
+Sorted users are displayed in the table with name, address, phone, and company name.
 
-Sortirani korisnici se prikazuju u tablici s imenom, adresom, telefonom i nazivom tvrtke. 
+Also, an up or down arrow is displayed depending on the current sorting direction.
 
-Također, strelica prema gore ili dole se prikazuje ovisno o trenutnom smjeru sortiranja. 
+The navigation button is generated using the Array.from() and map() methods and adds the "active" CSS class to the current page.
 
-Dugme za navigaciju generišemo pomoću Array.from() i map() metoda i dodajemo CSS klasu "active" na trenutnu stranicu.
+This is a simple example of a functional React component that uses useState and useEffect hooks, an HTTP GET request, field sorting and filtering, and page navigation to display a list of users in a table.
 
-Ovo je jednostavan primjer funkcionalne React komponente koja koristi useState i useEffect hookove, HTTP GET zahtjev, sortiranje i filtriranje polja i navigaciju stranica kako bi prikazala popis korisnika u tablici.
+To try this code out on your local machine, simply download the project, open it in your Visual Studio Code, and start it by tiping in your terminal
+"npm start".
