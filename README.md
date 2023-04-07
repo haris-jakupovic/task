@@ -36,3 +36,5 @@ This is a simple example of a functional React component that uses useState and 
 
 To try this code out on your local machine, simply download the project, open it in your Visual Studio Code, and start it by tiping in your terminal
 "npm start".
+
+The main code is located in the file "App.tsx" in "src" folder. Style is located in the file "App.css" in the folder "src".
